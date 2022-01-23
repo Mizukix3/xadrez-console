@@ -1,4 +1,4 @@
-﻿namespace Tabuleiro
+﻿namespace Tab
 {
     class Tabuleiro
     {
@@ -11,6 +11,11 @@
             Linhas = linhas;
             Colunas = colunas;
             Pecas = new Peca[Linhas, Colunas];
+        }
+
+        public Peca Peca(int linha, int coluna)
+        {
+            return Pecas[linha, coluna];
         }
     }
 }
