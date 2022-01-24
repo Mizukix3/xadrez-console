@@ -30,6 +30,18 @@ namespace Xadrez
         private void ColocarPecas()
         {
             Tabuleiro.ColocarPeca(new Torre(Cor.Branco, Tabuleiro), new PosicaoXadrez('c', 1).ToPosicao());
+            Tabuleiro.ColocarPeca(new Torre(Cor.Branco, Tabuleiro), new PosicaoXadrez('c', 2).ToPosicao());
+            Tabuleiro.ColocarPeca(new Rei(Cor.Branco, Tabuleiro), new PosicaoXadrez('d', 1).ToPosicao());
+            Tabuleiro.ColocarPeca(new Torre(Cor.Branco, Tabuleiro), new PosicaoXadrez('d', 2).ToPosicao());
+            Tabuleiro.ColocarPeca(new Torre(Cor.Branco, Tabuleiro), new PosicaoXadrez('e', 1).ToPosicao());
+            Tabuleiro.ColocarPeca(new Torre(Cor.Branco, Tabuleiro), new PosicaoXadrez('e', 2).ToPosicao());
+
+            Tabuleiro.ColocarPeca(new Torre(Cor.Preto, Tabuleiro), new PosicaoXadrez('c', 7).ToPosicao());
+            Tabuleiro.ColocarPeca(new Torre(Cor.Preto, Tabuleiro), new PosicaoXadrez('c', 8).ToPosicao());
+            Tabuleiro.ColocarPeca(new Rei(Cor.Preto, Tabuleiro), new PosicaoXadrez('d', 8).ToPosicao());
+            Tabuleiro.ColocarPeca(new Torre(Cor.Preto, Tabuleiro), new PosicaoXadrez('d', 7).ToPosicao());
+            Tabuleiro.ColocarPeca(new Torre(Cor.Preto, Tabuleiro), new PosicaoXadrez('e', 7).ToPosicao());
+            Tabuleiro.ColocarPeca(new Torre(Cor.Preto, Tabuleiro), new PosicaoXadrez('e', 8).ToPosicao());
         }
     }
 }
