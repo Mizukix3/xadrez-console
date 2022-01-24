@@ -2,7 +2,8 @@
 using Tab.Enums;
 using Xadrez;
 
-namespace xadrez_console {
+namespace xadrez_console
+{
     class Program
     {
         static void Main(string[] args)
@@ -11,12 +12,12 @@ namespace xadrez_console {
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                while(!partida.Terminada)
+                while (!partida.Terminada)
                 {
                     try
                     {
                         Console.Clear();
-                        Tela.ImprimirTabuleiro(partida.Tabuleiro);
+                        Tela.ImprimirPartida(partida);
                         Console.WriteLine();
                         Console.WriteLine("Turno: " + partida.Turno);
                         Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);

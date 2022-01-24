@@ -6,6 +6,37 @@ namespace xadrez_console
 {
     class Tela
     {
+        public static void ImprimirPartida(PartidaDeXadrez partida)
+        {
+            ImprimirTabuleiro(partida.Tabuleiro);
+            Console.WriteLine();
+            ImprimirPecasCapturadas(partida);
+        }
+
+        private static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
+        {
+            Console.WriteLine("Peças capturadas:");
+            Console.Write("Brancas: ");
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Branco));
+            Console.WriteLine();
+            Console.Write("Pretas: ");
+            ConsoleColor corOriginal = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            ImprimirConjunto(partida.PecasCapturadas(Cor.Preto));
+            Console.ForegroundColor = corOriginal;
+            Console.WriteLine();
+        }
+
+        private static void ImprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[");
+            foreach (Peca peca in conjunto)
+            {
+                Console.Write(peca + " ");
+            }
+            Console.Write("]");
+        }
+
         public static void ImprimirTabuleiro(Tabuleiro tabuleiro)
         {
             for (int i = 0; i < tabuleiro.Linhas; i++)
@@ -33,7 +64,8 @@ namespace xadrez_console
                     if (posicoesPossiveis[i, j])
                     {
                         Console.BackgroundColor = fundoAlterado;
-                    } else
+                    }
+                    else
                     {
                         Console.BackgroundColor = fundoOriginal;
                     }
@@ -61,7 +93,7 @@ namespace xadrez_console
                 else
                 {
                     ConsoleColor fundoOriginal = Console.ForegroundColor;
-                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write(peca);
                     Console.ForegroundColor = fundoOriginal;
                 }

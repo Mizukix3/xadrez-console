@@ -35,7 +35,7 @@ namespace Tab
             {
                 for (int j = 0; j < Tabuleiro.Colunas; j++)
                 {
-                    if (mat[i,j])
+                    if (mat[i, j])
                     {
                         return true;
                     }
